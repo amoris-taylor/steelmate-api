@@ -46,9 +46,9 @@ Or `npm run db:migrate` with `DATABASE_URL` set.
 3. Set env vars (Production + Preview).
 4. In `package.json`, for deploy pin engine:
 
-   `"@steelmate/engine": "git+https://github.com/grandfieldtechnologies/steelmate-engine.git#v0.1.0"`
+   `"@steelmate/engine": "git+https://github.com/amoris-taylor/steelmate-engine.git#v0.1.0"`
 
-   Use `file:../steelmate-engine` locally; swap or use `pnpm link` for development.
+   (When `grandfieldtechnologies/steelmate-engine` exists on GitHub, switch the URL and grant Vercel access to that repo.)
 
 5. Root directory `.`, Framework Next.js, Node runtime on `/api/v1/*`.
 

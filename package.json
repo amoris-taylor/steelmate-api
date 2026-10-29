@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
-    "prebuild": "npm run build --prefix ../steelmate-engine",
     "build": "next build --webpack",
     "start": "next start -p 3001",
     "lint": "eslint",
@@ -14,7 +13,7 @@
   "dependencies": {
     "@clerk/nextjs": "^6.36.0",
     "@neondatabase/serverless": "^1.0.2",
-  "@steelmate/engine": "file:../steelmate-engine",
+    "@steelmate/engine": "git+https://github.com/amoris-taylor/steelmate-engine.git#v0.1.0",
     "@upstash/redis": "^1.35.6",
     "drizzle-orm": "^0.44.7",
     "next": "^16.4.1",
