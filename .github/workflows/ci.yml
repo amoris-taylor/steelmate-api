@@ -1,0 +1,29 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: steelmate-api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: grandfieldtechnologies/steelmate-engine
+          path: steelmate-engine
+          ref: v0.1.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install ../steelmate-engine && npm install && npm run build
+        env:
+          CLERK_SECRET_KEY: sk_test_placeholder
+          DATABASE_URL: postgresql://localhost:5432/placeholder
+          UPSTASH_REDIS_REST_URL: https://example.upstash.io
+          UPSTASH_REDIS_REST_TOKEN: placeholder
+          CATALOG_VERSION: 2026.10.29
+          ALLOWED_ORIGINS: http://localhost:3000

@@ -1,0 +1,33 @@
+{
+  "name": "steelmate-api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "prebuild": "npm run build --prefix ../steelmate-engine",
+    "build": "next build --webpack",
+    "start": "next start -p 3001",
+    "lint": "eslint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^6.36.0",
+    "@neondatabase/serverless": "^1.0.2",
+  "@steelmate/engine": "file:../steelmate-engine",
+    "@upstash/redis": "^1.35.6",
+    "drizzle-orm": "^0.44.7",
+    "next": "^16.4.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "drizzle-kit": "^0.31.6",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "typescript": "^5"
+  }
+}
